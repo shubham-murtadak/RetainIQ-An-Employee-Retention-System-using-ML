@@ -62,7 +62,7 @@ Make sure you have the following installed:
 
 Here's a preview of the application:
 
-![Demo](screenshot/demo.png)
+![Demo](Screenshots/demo.png)
 
 ## 🛠️ Configuration
 
