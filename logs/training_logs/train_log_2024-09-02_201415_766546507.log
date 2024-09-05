@@ -1,0 +1,59 @@
+2024-09-02 20:14:15,115 : INFO : Start of Training
+2024-09-02 20:14:15,115 : INFO : Run_id:2024-09-02_201415_766546507
+2024-09-02 20:14:15,115 : INFO : Start of Data Load, validation and transformation
+2024-09-02 20:14:15,115 : INFO : Start of Archiving Old Rejected Files...
+2024-09-02 20:14:15,115 : INFO : End of Archiving Old Rejected Files...
+2024-09-02 20:14:15,115 : INFO : Start of Archiving Old Validated Files...
+2024-09-02 20:14:15,115 : INFO : End of Archiving Old Validated Files...
+2024-09-02 20:14:15,115 : INFO : Start of Archiving Old Processed Files...
+2024-09-02 20:14:15,115 : INFO : End of Archiving Old Processed Files...
+2024-09-02 20:14:15,115 : INFO : Start of Archiving Old Result Files...
+2024-09-02 20:14:15,115 : INFO : End of Archiving Old Result Files...
+2024-09-02 20:14:15,115 : INFO : Start of Reading values From Schema...
+2024-09-02 20:14:15,115 : INFO : End of Reading values From Schema...
+2024-09-02 20:14:15,115 : INFO : Start of Validating Column Length...
+2024-09-02 20:14:15,115 : ERROR : OSError raised while Validating Column Length
+Traceback (most recent call last):
+  File "C:\Users\SHUBHAM MURTADAK\project1\project2\ML_v1\apps\ingestion\load_validate.py", line 89, in validate_column_length
+    for file in listdir(self.data_path):
+                ^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'data/training_data'
+2024-09-02 20:14:15,122 : ERROR : Unsuccessful End of Data Load, validation and transformation
+Traceback (most recent call last):
+  File "C:\Users\SHUBHAM MURTADAK\project1\project2\ML_v1\apps\ingestion\load_validate.py", line 89, in validate_column_length
+    for file in listdir(self.data_path):
+                ^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'data/training_data'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\SHUBHAM MURTADAK\project1\project2\ML_v1\apps\ingestion\load_validate.py", line 297, in validate_trainset
+    self.validate_column_length(number_of_columns)
+  File "C:\Users\SHUBHAM MURTADAK\project1\project2\ML_v1\apps\ingestion\load_validate.py", line 103, in validate_column_length
+    raise OSError
+OSError
+2024-09-02 20:14:15,122 : ERROR : Unsuccessful End of Training
+Traceback (most recent call last):
+  File "C:\Users\SHUBHAM MURTADAK\project1\project2\ML_v1\apps\ingestion\load_validate.py", line 89, in validate_column_length
+    for file in listdir(self.data_path):
+                ^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'data/training_data'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\SHUBHAM MURTADAK\project1\project2\ML_v1\apps\ingestion\load_validate.py", line 297, in validate_trainset
+    self.validate_column_length(number_of_columns)
+  File "C:\Users\SHUBHAM MURTADAK\project1\project2\ML_v1\apps\ingestion\load_validate.py", line 103, in validate_column_length
+    raise OSError
+OSError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\SHUBHAM MURTADAK\project1\project2\ML_v1\apps\training\train_model.py", line 59, in training_model
+    self.loadValidate.validate_trainset()
+  File "C:\Users\SHUBHAM MURTADAK\project1\project2\ML_v1\apps\ingestion\load_validate.py", line 313, in validate_trainset
+    raise Exception
+Exception

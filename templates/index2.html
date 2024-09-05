@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Employee Churn Prediction</title>
+</head>
+<body>
+<div class="formbold-main-wrapper">
+  <div class="formbold-form-wrapper">
+         <img src="your-image-url-here.jpg" alt="Form Image">
+    <form action="https://your-form-action-url-here.com" method="POST">
+      <div class="formbold-input-wrapp formbold-mb-3">
+        <label for="firstname" class="formbold-form-label"> Name </label>
+
+        <div>
+          <input
+            type="text"
+            name="firstname"
+            id="firstname"
+            placeholder="First name"
+            class="formbold-form-input"
+            required
+          />
+
+          <input
+            type="text"
+            name="lastname"
+            id="lastname"
+            placeholder="Last name"
+            class="formbold-form-input"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="formbold-mb-3">
+        <label for="age" class="formbold-form-label"> Age </label>
+        <input
+          type="number"
+          name="age"
+          id="age"
+          placeholder="ex: 25"
+          class="formbold-form-input"
+          required
+        />
+      </div>
+
+      <div class="formbold-mb-3">
+        <label for="dob" class="formbold-form-label"> Date of Birth </label>
+        <input type="date" name="dob" id="dob" class="formbold-form-input" required />
+      </div>
+
+      <div class="formbold-mb-3">
+        <label class="formbold-form-label">Gender</label>
+
+        <select class="formbold-form-input" name="gender" id="gender" required>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="others">Others</option>
+        </select>
+      </div>
+
+      <div class="formbold-mb-3">
+        <label for="email" class="formbold-form-label"> Email </label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="example@email.com"
+          class="formbold-form-input"
+          required
+        />
+      </div>
+
+      <div class="formbold-mb-3">
+        <label for="address" class="formbold-form-label"> Address </label>
+
+        <input
+          type="text"
+          name="address"
+          id="address"
+          placeholder="Street address"
+          class="formbold-form-input formbold-mb-3"
+          required
+        />
+        <input
+          type="text"
+          name="address2"
+          id="address2"
+          placeholder="Street address line 2"
+          class="formbold-form-input"
+        />
+      </div>
+
+      <div class="formbold-mb-3 formbold-input-wrapp">
+        <label for="phone" class="formbold-form-label"> Phone </label>
+
+        <div>
+          <input
+            type="text"
+            name="areacode"
+            id="areacode"
+            placeholder="Area code"
+            class="formbold-form-input formbold-w-45"
+            required
+          />
+
+          <input
+            type="text"
+            name="phone"
+            id="phone"
+            placeholder="Phone number"
+            class="formbold-form-input"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="formbold-input-flex">
+        <div>
+          <label for="post" class="formbold-form-label"> Post/Zip code </label>
+          <input
+            type="text"
+            name="post"
+            id="post"
+            placeholder="ex: 8976"
+            class="formbold-form-input"
+            required
+          />
+        </div>
+        <div>
+          <label for="city" class="formbold-form-label"> City </label>
+          <input
+            type="text"
+            name="city"
+            id="city"
+            placeholder="ex: New York"
+            class="formbold-form-input"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="formbold-mb-3">
+        <label for="upload" class="formbold-form-label">
+          Upload Signature
+        </label>
+        <input
+          type="file"
+          name="upload"
+          id="upload"
+          class="formbold-form-input formbold-form-file"
+          required
+        />
+      </div>
+
+      <div class="formbold-checkbox-wrapper">
+        <label for="supportCheckbox" class="formbold-checkbox-label">
+          <div class="formbold-relative">
+            <input
+              type="checkbox"
+              id="supportCheckbox"
+              class="formbold-input-checkbox"
+              required
+            />
+            <div class="formbold-checkbox-inner">
+              <span class="formbold-opacity-0">
+                <svg
+                  width="11"
+                  height="8"
+                  viewBox="0 0 11 8"
+                  class="formbold-stroke-current"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.81868 0.688604L4.16688 5.4878L2.05598 3.29507C1.70417 2.92271 1.1569 2.96409 0.805082 3.29507C0.453266 3.66742 0.492357 4.24663 0.805082 4.61898L3.30689 7.18407C3.54143 7.43231 3.85416 7.55642 4.16688 7.55642C4.47961 7.55642 4.79233 7.43231 5.02688 7.18407L10.0696 2.05389C10.4214 1.68154 10.4214 1.10233 10.0696 0.729976C9.71776 0.357624 9.17049 0.357625 8.81868 0.688604Z"
+                    fill="white"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+          I agree to the defined
+          <a href="#"> terms, conditions, and policies</a>
+        </label>
+      </div>
+
+      <button class="formbold-btn">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- Optional JavaScript -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybWgYeZRV49KUn/3O9UJjkn5p6V5YjSkPVLbHGuxUbZxB3ZeZ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU1ygqk6AI5AXmqWZ94G1tXkVoWW8JGz8WKfv4x0bxpC/+Q" crossorigin="anonymous"></script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+  .formbold-mb-3 {
+    margin-bottom: 15px;
+  }
+  .formbold-relative {
+    position: relative;
+  }
+  .formbold-opacity-0 {
+    opacity: 0;
+  }
+  .formbold-stroke-current {
+    stroke: #ffffff;
+  }
+  #supportCheckbox:checked ~ .formbold-checkbox-inner {
+    background: #6a64f1;
+    border-color: #6a64f1;
+  }
+  .formbold-checkbox-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .formbold-input-checkbox {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    z-index: 1;
+    cursor: pointer;
+    margin: 0;
+  }
+  .formbold-checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  .formbold-checkbox-label {
+    font-size: 16px;
+    line-height: 24px;
+    color: #07074d;
+    cursor: pointer;
+  }
+  .formbold-checkbox-wrapper a {
+    font-size: 16px;
+    line-height: 24px;
+    color: #6a64f1;
+    cursor: pointer;
+  }
+  .formbold-w-45 {
+    width: 45%;
+  }
+  .formbold-input-wrapp > div {
+    display: flex;
+    gap: 20px;
+  }
+  .formbold-main-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+  }
+  .formbold-form-wrapper {
+    margin: 0 auto;
+    max-width: 570px;
+    width: 100%;
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.1);
+  }
+  .formbold-img {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+  .formbold-form-title {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 34px;
+    color: #07074d;
+    text-align: center;
+    margin: 0;
+  }
+  .formbold-form-label {
+    color: #07074d;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 12px;
+  }
+  .formbold-form-input {
+    width: 100%;
+    padding: 13px 22px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    background: white;
+    font-weight: 500;
+    font-size: 16px;
+    color: #6b7280;
+    outline: none;
+    resize: none;
+  }
+  .formbold-form-input:focus {
+    border-color: #6a64f1;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+  }
+  .formbold-form-file {
+    padding: 12px;
+  }
+  .formbold-btn {
+    text-align: center;
+    font-size: 16px;
+    border-radius: 6px;
+    padding: 14px 25px;
+    border: none;
+    font-weight: 500;
+    background-color: #6a64f1;
+    color: white;
+    cursor: pointer;
+    margin-top: 25px;
+  }
+  .formbold-btn:hover {
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+  }
+</style>
+</body>
+</html>

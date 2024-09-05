@@ -1,0 +1,49 @@
+2024-09-02 20:08:51,157 : INFO : Start of Training
+2024-09-02 20:08:51,157 : INFO : Run_id:2024-09-02_200851_102572149
+2024-09-02 20:08:51,157 : INFO : Start of Data Load, validation and transformation
+2024-09-02 20:08:51,157 : INFO : Start of Archiving Old Rejected Files...
+2024-09-02 20:08:51,157 : INFO : End of Archiving Old Rejected Files...
+2024-09-02 20:08:51,157 : INFO : Start of Archiving Old Validated Files...
+2024-09-02 20:08:51,157 : INFO : End of Archiving Old Validated Files...
+2024-09-02 20:08:51,157 : INFO : Start of Archiving Old Processed Files...
+2024-09-02 20:08:51,157 : INFO : End of Archiving Old Processed Files...
+2024-09-02 20:08:51,157 : INFO : Start of Archiving Old Result Files...
+2024-09-02 20:08:51,157 : INFO : End of Archiving Old Result Files...
+2024-09-02 20:08:51,157 : INFO : Start of Reading values From Schema...
+2024-09-02 20:08:51,157 : INFO : End of Reading values From Schema...
+2024-09-02 20:08:51,157 : INFO : Start of Validating Column Length...
+2024-09-02 20:08:51,184 : ERROR : Exception raised while Validating Column Length: cannot access local variable 'file' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\SHUBHAM MURTADAK\project1\project2\ML_v1\apps\ingestion\load_validate.py", line 87, in validate_column_length
+    print("data :",self.data_path+'/'+ file)
+                                       ^^^^
+UnboundLocalError: cannot access local variable 'file' where it is not associated with a value
+2024-09-02 20:08:51,184 : ERROR : Unsuccessful End of Data Load, validation and transformation
+Traceback (most recent call last):
+  File "C:\Users\SHUBHAM MURTADAK\project1\project2\ML_v1\apps\ingestion\load_validate.py", line 291, in validate_trainset
+    self.validate_column_length(number_of_columns)
+  File "C:\Users\SHUBHAM MURTADAK\project1\project2\ML_v1\apps\ingestion\load_validate.py", line 102, in validate_column_length
+    raise e
+  File "C:\Users\SHUBHAM MURTADAK\project1\project2\ML_v1\apps\ingestion\load_validate.py", line 87, in validate_column_length
+    print("data :",self.data_path+'/'+ file)
+                                       ^^^^
+UnboundLocalError: cannot access local variable 'file' where it is not associated with a value
+2024-09-02 20:08:51,184 : ERROR : Unsuccessful End of Training
+Traceback (most recent call last):
+  File "C:\Users\SHUBHAM MURTADAK\project1\project2\ML_v1\apps\ingestion\load_validate.py", line 291, in validate_trainset
+    self.validate_column_length(number_of_columns)
+  File "C:\Users\SHUBHAM MURTADAK\project1\project2\ML_v1\apps\ingestion\load_validate.py", line 102, in validate_column_length
+    raise e
+  File "C:\Users\SHUBHAM MURTADAK\project1\project2\ML_v1\apps\ingestion\load_validate.py", line 87, in validate_column_length
+    print("data :",self.data_path+'/'+ file)
+                                       ^^^^
+UnboundLocalError: cannot access local variable 'file' where it is not associated with a value
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\SHUBHAM MURTADAK\project1\project2\ML_v1\apps\training\train_model.py", line 59, in training_model
+    self.loadValidate.validate_trainset()
+  File "C:\Users\SHUBHAM MURTADAK\project1\project2\ML_v1\apps\ingestion\load_validate.py", line 307, in validate_trainset
+    raise Exception
+Exception

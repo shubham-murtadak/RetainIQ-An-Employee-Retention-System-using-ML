@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Employee Retention Prediction</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style2.css')}}">
+
+    <style>
+        body{
+            background: linear-gradient(to left, #667292 0%, #a2b9bc 100%);
+        }
+
+        footer a{
+          color: #fff;
+        }
+        footer a:hover{
+          color: #fff;
+        }
+        .centerdiv{
+          height: 15vh;
+          display: flex;
+          align-items: center;
+        }
+        .centerdiv a{
+          height: 30px;
+          width: 30px;
+          background-color: #f5f6fa;
+          border-radius: 50px;
+          text-align: center;
+          margin: 5px;
+          line-height: 30px;
+          position: relative;
+          overflow: hidden;
+        }
+        .centerdiv a i{
+          transition: all 0.3s linear;
+        }
+        .centerdiv a:hover i{
+          transform: scale(1.5);
+          color: #f5f6fa;
+        }
+        .centerdiv a:before{
+          content: "";
+          width: 120%; height: 120%;
+          position: absolute;
+          top: 90%; left: -50%;
+          background-color: #00a8ff;
+          transform: rotate(60deg);
+        }
+
+        .centerdiv a:hover:before{
+          animation: socialicons 0.8s 1;
+          animation-fill-mode: forwards;
+        }
+        @keyframes socialicons {
+          0%{ top: 90%; left: -50%;}
+          50%{ top: -60%; left: -10%;}
+          100%{ top: -10%; left: -10%}
+        }
+
+        .fa-facebook-f{
+          color: #e84393;
+        }
+        .fa-instagram{
+          color: #e84393;
+        }
+        .fa-github{
+          color: #e84118;
+        }
+        .fa-linkedin{
+          color: #0097e6;
+        }
+        .fa-twitter{
+          color: #0097e6;
+        }
+    </style>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-image: url("../static/img/b5.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+    <title>D'predicto</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+          <a class="navbar-brand text-warning" href="#">RetainIQ</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="/">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="/about">About</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="/contact">Contact us</a>
+                  </li>
+              </ul>
+              <form class="d-flex ms-auto">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+          </div>
+      </div>
+  </nav>
+  
+
+    <h1>
+      <div style ="text-align:center">
+        <font color='white'>
+          Predict Employee Retention
+        </font>
+      </div>
+    </h1>
+    <br>
+
+    <div class="wrapper">
+      <div class="container my-5">
+        <div class="row">
+          <div class="col-md-10 col-sm-6 mx-auto">
+            <form id="predictForm" class="form-horizontal">
+              <div class="form-group">
+                <input type="number" name="satisfaction_level" id="satisfaction_level" class="form-control" required>
+                <label for="satisfaction_level" class="ph-area">Enter Satisfaction Level</label>
+              </div>
+              <div class="form-group">
+                <input type="number" name="last_evaluation" id="last_evaluation" class="form-control" required>
+                <label for="last_evaluation" class="ph-area">Enter Last Evaluation</label>
+              </div>
+              <div class="form-group">
+                <input type="number" name="number_project" id="number_project" class="form-control" required>
+                <label for="number_project" class="ph-area">Enter Number of Projects</label>
+              </div>
+              <div class="form-group">
+                <input type="number" name="average_montly_hours" id="average_montly_hours" class="form-control" required>
+                <label for="average_montly_hours" class="ph-area">Enter Average Monthly Hours</label>
+              </div>
+              <div class="form-group">
+                <input type="number" name="time_spend_company" id="time_spend_company" class="form-control" required>
+                <label for="time_spend_company" class="ph-area">Enter Time Spent at Company (Years)</label>
+              </div>
+              <div class="form-group">
+                <input type="number" name="work_accident" id="work_accident" class="form-control" required>
+                <label for="work_accident" class="ph-area">Work Accident (0 = No, 1 = Yes)</label>
+              </div>
+              <div class="form-group">
+                <input type="number" name="promotion_last_5years" id="promotion_last_5years" class="form-control" required>
+                <label for="promotion_last_5years" class="ph-area">Promotion in Last 5 Years (0 = No, 1 = Yes)</label>
+              </div>
+              <div class="form-group">
+                <input type="number" name="salary" id="salary" class="form-control" required>
+                <label for="salary" class="ph-area">Salary (0 = Low, 1 = Medium, 2 = High)</label>
+              </div>
+
+              <div class="d-flex justify-content-between">
+                <input type="submit" class="btn btn-primary" value="Submit">
+                <input type="reset" class="btn btn-danger" value="Reset">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      $("#predictForm").submit(function(event) {
+        event.preventDefault();
+        var $form = $(this);
+        var satisfaction_level = $form.find("input[id='satisfaction_level']").val();
+        var last_evaluation = $form.find("input[id='last_evaluation']").val();
+        var number_project = $form.find("input[id='number_project']").val();
+        var average_montly_hours = $form.find("input[id='average_montly_hours']").val();
+        var time_spend_company = $form.find("input[id='time_spend_company']").val();
+        var work_accident = $form.find("input[id='work_accident']").val();
+        var promotion_last_5years = $form.find("input[id='promotion_last_5years']").val();
+        var salary = $form.find("input[id='salary']").val();
+
+        $.ajax({
+          url: "/predict",
+          method: "POST",
+          data: {
+            satisfaction_level: satisfaction_level,
+            last_evaluation: last_evaluation,
+            number_project: number_project,
+            average_montly_hours: average_montly_hours,
+            time_spend_company: time_spend_company,
+            work_accident: work_accident,
+            promotion_last_5years: promotion_last_5years,
+            salary: salary
+          },
+          success: function(response) {
+            $("#result").html("<div class='alert alert-success'>Prediction: " + response.result + "</div>");
+          },
+          error: function(error) {
+            console.log(error);
+          }
+        });
+      });
+    </script>
+    
+    <div id="result" class="container my-5"></div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
